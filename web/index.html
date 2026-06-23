@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocuSense</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="side-panel">
+      <div>
+        <div class="brand-mark">DS</div>
+        <h1>DocuSense</h1>
+        <p class="subtle">Ask smart questions from your files.</p>
+      </div>
+      <div class="side-card">
+        <h3>Supported files</h3>
+        <p>PDF, DOCX, TXT</p>
+      </div>
+      <div class="side-card">
+        <h3>What it shows</h3>
+        <p>Answers with matching source snippets from uploaded documents.</p>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <section id="authView" class="view active">
+        <div class="hero-card">
+          <div>
+            <p class="eyebrow">Student AI project</p>
+            <h2>Read less. Find answers faster.</h2>
+            <p class="hero-text">Upload notes, reports, and documents. Then ask questions and get answers from your own files.</p>
+          </div>
+          <div class="auth-grid">
+            <form id="loginForm" class="card form-card">
+              <h3>Login</h3>
+              <label>Email</label>
+              <input type="email" name="email" required>
+              <label>Password</label>
+              <input type="password" name="password" required>
+              <button type="submit">Login</button>
+            </form>
+
+            <form id="signupForm" class="card form-card">
+              <h3>Create Account</h3>
+              <label>Name</label>
+              <input type="text" name="name" required>
+              <label>Email</label>
+              <input type="email" name="email" required>
+              <label>Password</label>
+              <input type="password" name="password" required>
+              <button type="submit">Create Account</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="appView" class="view">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2 id="welcomeText">Welcome</h2>
+          </div>
+          <button id="logoutBtn" class="secondary-btn">Logout</button>
+        </header>
+
+        <div class="workspace-grid">
+          <section class="card upload-card">
+            <div class="card-header">
+              <div>
+                <h3>Upload Document</h3>
+                <p>Choose one PDF, DOCX, or TXT file.</p>
+              </div>
+            </div>
+            <form id="uploadForm" class="upload-form">
+              <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.txt" required>
+              <button type="submit">Upload</button>
+            </form>
+            <div id="uploadMessage" class="small-message"></div>
+          </section>
+
+          <section class="card docs-card">
+            <div class="card-header">
+              <div>
+                <h3>Your Documents</h3>
+                <p>Select one or search across all uploaded files.</p>
+              </div>
+            </div>
+            <div id="documentList" class="document-list"></div>
+          </section>
+        </div>
+
+        <div class="chat-grid">
+          <section class="card chat-card">
+            <div class="card-header">
+              <div>
+                <h3>Ask a Question</h3>
+                <p>Answers are based only on uploaded files.</p>
+              </div>
+            </div>
+            <form id="askForm" class="ask-form">
+              <select id="documentFilter">
+                <option value="">Search all documents</option>
+              </select>
+              <textarea id="questionInput" rows="4" placeholder="Example: What are the main points in this report?" required></textarea>
+              <button type="submit">Get Answer</button>
+            </form>
+            <div id="answerBox" class="answer-box empty-state">Your answer will appear here.</div>
+            <div id="sourceList" class="source-list"></div>
+          </section>
+
+          <section class="card history-card">
+            <div class="card-header">
+              <div>
+                <h3>Recent History</h3>
+                <p>Your latest questions and answers.</p>
+              </div>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

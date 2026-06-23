@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+docu_sense.db
+uploads/
+server.out.log
+server.err.log
+*.db
