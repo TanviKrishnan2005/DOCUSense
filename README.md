@@ -23,17 +23,6 @@ Users can:
 4. The app finds the most relevant chunks for the question
 5. It returns a short answer and shows source snippets
 
-## Run
-
-Use the bundled Python runtime:
-
-```powershell
-& "C:\Users\r.sethuramalingom\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" server.py
-```
-
-Then open:
-
-`http://127.0.0.1:8035`
 
 ## Notes
 
